@@ -10,11 +10,10 @@ def home():
         prijmeni = request.form.get("prijmeni")
         email = request.form.get("email")
         telefon = request.form.get("telefon")
-        heslo = request.form.get("heslo")
 
-        pole = [jmeno, prijmeni, email, telefon, heslo]
+        pole = [jmeno, prijmeni, email, telefon]
         uzivatele.append(pole)
-    return render_template("stranka.html", jmeno=uzivatele)
+    return render_template("stranka.html")
 
 
 
@@ -46,9 +45,9 @@ def senior():
 def vydej():
     return render_template("vydej.html")
 
-@app.route("/b7",methods = ["POST"])
-def b7():
-    return render_template("b7.html")
+@app.route("/komunitzah",methods = ["POST"])
+def komunitzah():
+    return render_template("komunitzah.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

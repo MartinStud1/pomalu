@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="static/css.css"><!--poznámka pro příště: Aby mi css fungovalo všude, tak to musím propojit i na těch ostatních html stránkách!! Kdybych to nechal jen na té základní, tak to bude platit jen na té základní stránce a nikde jinde!!-->
 </head>
 <body>
-   <h1>Přihlaš se k dobrovolníkům!</h1>
+   <h1>Připoj se k dobrovolníkům!</h1>
    <form method="post" action="/">
     <h3>Zadej jméno</h3>
     <input type="text" name="jmeno">
@@ -16,13 +17,12 @@
     <input type="email" name="email">
     <h3>Zadej telefon</h3>
     <input type="number" name="telefon">
-    <h3>Zadej heslo</h3>
-    <input type="text" name="heslo">
+    <br>
     <input type="submit">
     <br>
-    
-   </form> 
-
+    </form> 
+    <br>
+    <br>
    <form method="post" action="/uzivatele">
     <input type="submit" value="Všichni uživatelé">
    </form>
@@ -32,7 +32,7 @@
    </form>
    <br>
    <form method="post" action="/aktualniprojekty">
-    <input type="submit" value="Podívej se na naše aktuální projekty! Můžeš se i zapojit!">
+    <input type="submit" value="Aktuální programy">
    </form>
    
 </body>
