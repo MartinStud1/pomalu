@@ -19,8 +19,36 @@ def home():
 
 
 @app.route("/uzivatele", methods = ["POST"])
-def funkce():
+def f_uzivatele():
     return render_template("uzivatele.html", uzivatele=uzivatele)
+
+@app.route("/tvurce",methods = ["POST"])
+def tvurce():
+    return render_template("tvurce.html")
+
+@app.route("/aktualniprojekty",methods = ["POST"])
+def aktualniprojekty():
+    return render_template("aktualniprojekty.html")
+
+@app.route("/beskydy",methods = ["POST"])
+def beskydy():
+    return render_template("beskydy.html")
+
+@app.route("/promale",methods = ["POST"])
+def promale():
+    return render_template("promale.html")
+
+@app.route("/senior",methods = ["POST"])
+def senior():
+    return render_template("senior.html")
+
+@app.route("/vydej",methods = ["POST"])
+def vydej():
+    return render_template("vydej.html")
+
+@app.route("/b7",methods = ["POST"])
+def b7():
+    return render_template("b7.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
