@@ -62,15 +62,16 @@ def prihlas_se():
     telefon = session.get("telefon")
 
     p_jmeno = request.form.get("p_jmeno")
-    p_prijmeni = request.form.get("p_jmeno")
+    p_prijmeni = request.form.get("p_prijmeni")
     p_email = request.form.get("p_email")
     p_telefon = request.form.get("p_telefon")
 
     if request.method == "POST":
         if jmeno == p_jmeno and prijmeni == p_prijmeni and email == p_email and telefon == p_telefon:
-            porovnani = "Správně!"
+            porovnani = "Výborně! Jsi přihlášen/a!"
+        
         else:
-            porovnani = "Něco se nám neshoduje."
+            porovnani = "Špatné přihlášení..."
     return render_template("prihlas_se.html",spravne=porovnani)
 
 if __name__ == "__main__":
