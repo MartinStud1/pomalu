@@ -1,8 +1,9 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,session
 
 app = Flask(__name__)
 uzivatele = []
 
+app.secret_key = "nikdonicnetusit"
 @app.route("/", methods=["GET", "POST"])
 def home():
     if request.method == "POST":
@@ -13,6 +14,10 @@ def home():
 
         pole = [jmeno, prijmeni, email, telefon]
         uzivatele.append(pole)
+        session['jmeno'] = jmeno
+        session['prijmeni'] = prijmeni
+        session['email'] = email
+        session['telefon'] = telefon
     return render_template("stranka.html")
 
 
@@ -48,6 +53,25 @@ def vydej():
 @app.route("/komunitzah",methods = ["POST"])
 def komunitzah():
     return render_template("komunitzah.html")
+
+@app.route("/prihlas_se", methods=["GET","POST"])
+def prihlas_se():
+    jmeno = session.get("jmeno")
+    prijmeni = session.get("prijmeni")
+    email = session.get("email")
+    telefon = session.get("telefon")
+
+    p_jmeno = request.form.get("p_jmeno")
+    p_prijmeni = request.form.get("p_jmeno")
+    p_email = request.form.get("p_email")
+    p_telefon = request.form.get("p_telefon")
+
+    if request.method == "POST":
+        if jmeno == p_jmeno and prijmeni == p_prijmeni and email == p_email and telefon == p_telefon:
+            porovnani = "Správně!"
+        else:
+            porovnani = "Něco se nám neshoduje."
+    return render_template("prihlas_se.html",spravne=porovnani)
 
 if __name__ == "__main__":
     app.run(debug=True)
