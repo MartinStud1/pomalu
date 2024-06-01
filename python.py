@@ -2,6 +2,10 @@ from flask import Flask, render_template, request,session
 
 app = Flask(__name__)
 uzivatele = []
+statistika = {    #list pro statistiku
+    "senior_s" : 0, "vydej_s" : 0, "beskydy_s" : 0, "komunitzah_s" : 0, "promale_s" : 0
+}
+
 #p_x = přihlašovací ...
 app.secret_key = "nikdonicnetusit"
 @app.route("/", methods=["GET", "POST"])
@@ -11,8 +15,9 @@ def home():
         prijmeni = request.form.get("prijmeni")
         email = request.form.get("email")
         telefon = request.form.get("telefon")
+        heslo = request.form.get("heslo")
 
-        pole = [jmeno, prijmeni, email, telefon]
+        pole = [jmeno, prijmeni, email, telefon, heslo]
         uzivatele.append(pole)#pole jde do uživatelů - append. = do tohohle přidej tamto
 
         session ["uzivatele"] = uzivatele
@@ -21,6 +26,7 @@ def home():
         session['prijmeni'] = prijmeni
         session['email'] = email
         session['telefon'] = telefon
+        session['heslo'] = heslo
     return render_template("stranka.html")
 
 
@@ -57,6 +63,8 @@ def vydej():
 def komunitzah():
     return render_template("komunitzah.html")
 
+
+
 hlavni_jmeno = None
 hlavni_prijmeni = None
 @app.route("/prihlas_se", methods=["GET","POST"])
@@ -65,6 +73,7 @@ def prihlas_se():
     prijmeni = session.get("prijmeni")
     email = session.get("email")
     telefon = session.get("telefon")
+    heslo = session.get("heslo")
 #pole všech uživatelů :
     uzivatele = session.get("uzivatele")#převedu si celé pole. Tak... mám tady pole. Vyzkouším porovnat pole s polem, co vytvoří uživatel v přihlášení
 #--------------
@@ -74,17 +83,11 @@ def prihlas_se():
     p_prijmeni = request.form.get("p_prijmeni")
     p_email = request.form.get("p_email")
     p_telefon = request.form.get("p_telefon")
+    p_heslo = request.form.get("p_heslo")
 
 
-    p_pole = [p_jmeno, p_prijmeni, p_email, p_telefon] #poznámka - není třeba dělat pole v poli u přihlašování, protože tam nebude více než jedno zadané tím člověkem... stačí jedno pole
+    p_pole = [p_jmeno, p_prijmeni, p_email, p_telefon, p_heslo] #poznámka - není třeba dělat pole v poli u přihlašování, protože tam nebude více než jedno zadané tím člověkem... stačí jedno pole
 
-    #if request.method == "POST":
-     #   if jmeno == p_jmeno and prijmeni == p_prijmeni and email == p_email and telefon == p_telefon:
-      #      porovnani = "Výborně! Jsi přihlášen/a!"
-        
-       # else:
-        #    porovnani = "Špatné přihlášení..."
-    #return render_template("prihlas_se.html",spravne=porovnani)
     spravne = 0
     mam_te = 0
     if request.method == "POST":
@@ -96,7 +99,7 @@ def prihlas_se():
                 if uzivatele[i][n] == p_pole[n]:
                     spravne += 1
                        
-            if spravne == 4:
+            if spravne == len(p_pole):
                 mam_te = 1
                 
                 break
@@ -112,15 +115,55 @@ def prihlas_se():
             porovnani = "něco nám nesedí" 
             hlavni_jmeno = None
             hlavni_prijmeni = None
-    print(hlavni_jmeno)
-    print(hlavni_prijmeni)
-    return render_template("prihlas_se.html",spravne=porovnani)   
-
-               
+    
+    return render_template("prihlas_se.html",spravne=porovnani) 
+ 
+@app.route("/senior_s", methods=["GET", "POST"])
+def senior_s():
+    
+    if request.method == "POST":
         
+        statistika["senior_s"] += 1
+    return render_template("senior.html")
 
+@app.route("/beskydy_s", methods=["GET", "POST"])
+def beskydy_s():
+    if request.method == "POST":
+        
+        statistika["beskydy_s"] += 1
+    return render_template("beskydy.html")
+
+@app.route("/promale_s", methods=["GET", "POST"])
+def promale_s():
+    if request.method == "POST":
+        
+        statistika["promale_s"] += 1
+    return render_template("promale.html")
+
+@app.route("/komunitzah_s", methods=["GET", "POST"])
+def komunitzah_s():
+    if request.method == "POST":
+        
+        statistika["komunitzah_s"] += 1
+    return render_template("komunitzah.html")
+
+@app.route("/vydej_s", methods=["GET", "POST"])
+def vydej_s():
+    if request.method == "POST":
+       
+        statistika["vydej_s"] += 1
+    return render_template("vydej.html")
+
+@app.route("/statistika", methods = ["GET", "POST"])
+def statistikafunkce():
+    
+    return render_template("statistika.html", statistika=statistika)
+    
 
 
 if __name__ == "__main__":
     app.run(debug=True)
-#hlavně nezapomeň přidat heslo vole..
+
+
+
+
