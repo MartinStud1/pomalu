@@ -107,7 +107,7 @@ def prihlas_se():
                 mam_te = 0
                 
         if mam_te == 1:
-            porovnani = "Jsi přihlášen. Výborně!"
+            porovnani = "Jsi přihlášen/a. Výborně!"
             hl_jmeno = request.form.get("p_jmeno")
             hl_prijmeni = request.form.get("p_prijmeni")
             session['hl_jmeno'] = hl_jmeno #uložím do relace

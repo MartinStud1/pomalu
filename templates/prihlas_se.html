@@ -22,7 +22,7 @@
         h1 {
             text-align: center;
             margin-top: 50px;
-            margin-bottom: 50px;
+            margin-bottom: 20px; /* Reduced margin */
             color: #28a745; 
             font-weight: bold; 
             font-size: 2.1rem; 
@@ -46,7 +46,7 @@
             border: 1px solid #28a745; 
             border-radius: 4px;
             box-sizing: border-box;
-            font-size: 22px;
+            font-size: 16px; /* Reduced font size */
         }
         input[type="submit"] {
             width: 100%;
@@ -56,49 +56,52 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 18px; 
+            font-size: 16px; /* Reduced font size */
         }
         input[type="submit"]:hover {
             background-color: #218838; 
         }
         .spravne-content {
-            font-size: 24px; 
-            margin-top: 20px; 
+            font-size: 18px; /* Reduced font size */
+            margin-top: 10px; /* Reduced margin */
             border: 2px solid #28a745; 
-            padding: 20px; 
+            padding: 10px; /* Reduced padding */
+        }
+        .bold {
+            font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="left-bar"></div>
     <div class="right-bar"></div>
-    <h1 class="display-3">Přihlaš se!</h1>
+    <h1 class="display-3"><strong>Přihlaš se!</strong></h1> <!-- Bold text -->
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <form method="post" action="/prihlas_se">
                     <div class="form-group">
-                        <h3>Zadej přihlašovací jméno</h3>
+                        <h3 class="mb-1">Přihlašovací jméno</h3> <!-- Reduced margin-bottom -->
                         <input type="text" name="p_jmeno" required>
                     </div>
                     <div class="form-group">
-                        <h3>Zadej přihlašovací příjmení</h3>
+                        <h3 class="mb-1">Přihlašovací příjmení</h3>
                         <input type="text" name="p_prijmeni" required>
                     </div>
                     <div class="form-group">
-                        <h3>Zadej přihlašovací email</h3>
+                        <h3 class="mb-1">Přihlašovací email</h3>
                         <input type="email" name="p_email" required>
                     </div>
                     <div class="form-group">
-                        <h3>Zadej přihlašovací telefon</h3>
+                        <h3 class="mb-1">Přihlašovací telefon</h3>
                         <input type="tel" name="p_telefon" pattern="[0-9]{9,10}" required>
                     </div>
                     <div class="form-group">
-                        <h3>Zadej přihlašovací heslo</h3>
+                        <h3 class="mb-1">Přihlašovací heslo</h3>
                         <input type="password" name="p_heslo" required>
                     </div>
                     <div class="form-group">
-                        <input type="submit" value="Přihlásit se">
+                        <input type="submit" value="Přihlásit se"> <!-- Removed bold text -->
                     </div>
                 </form>
             </div>
