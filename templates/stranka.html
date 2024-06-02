@@ -5,10 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Připoj se k dobrovolníkům!</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="static/css.css">
+    <style>
+        body {
+            background-color: #f0f0f0; 
+            color: #333; 
+        }
+        .navbar-light {
+            background-color: #28a745; 
+        }
+        .navbar-light .navbar-brand, .navbar-light .navbar-nav .nav-link {
+            color: #fff; 
+        }
+        .navbar-light .navbar-brand:hover, .navbar-light .navbar-nav .nav-link:hover {
+            color: #d4d4d4; 
+        }
+        .nav-item .btn-link {
+            border: 1px solid #fff; 
+            border-radius: 5px; 
+            color: #fff; 
+            padding: 5px 10px; 
+            margin-left: 5px; 
+        }
+        .nav-item .btn-link:hover {
+            background-color: #218838;
+            border-color: #1e7e34; 
+            color: #fff; 
+        }
+        .form-control {
+            background-color: #fff; 
+            border: 1px solid #2db44d; 
+            border-radius: 4px; 
+        }
+        .form-control:focus {
+            border-color: #007bff; 
+            box-shadow: none; 
+        }
+        .btn-primary {
+            background-color: #007bff; 
+            border-color: #007bff;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; 
+            border-color: #004085;
+        }
+        .header {
+            margin-top: 20px;
+            padding: 20px 0;
+            color: #28a745; 
+            text-align: center;
+            font-size: 2.5em; 
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff; /* White shadow */
+        }
+        footer {
+            background-color: #e9ecef; 
+        }
+        footer .bold {
+            font-weight: bold; 
+        }
+        .form-group {
+            margin-top: 6px; 
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="/">Dobrovolníci</a>
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav ml-auto">
@@ -43,8 +104,10 @@
 
     <div class="container">
         <div class="row mt-5">
+            <div class="col-md-12">
+                <h1 class="header">Připoj se k dobrovolníkům!</h1>
+            </div>
             <div class="col-md-6 offset-md-3">
-                <h1 class="text-center">Připoj se k dobrovolníkům!</h1>
                 <form method="post" action="/">
                     <div class="form-group">
                         <label for="jmeno">Zadej jméno</label>
@@ -52,7 +115,7 @@
                     </div>
                     <div class="form-group">
                         <label for="prijmeni">Zadej příjmení</label>
-                        <input type="text" class="form-control" id="prijmeni" name="prijmeni">
+                        <input type="text" class ="form-control" id="prijmeni" name="prijmeni">
                     </div>
                     <div class="form-group">
                         <label for="email">Zadej email</label>
@@ -66,7 +129,7 @@
                         <label for="heslo">Zadej heslo</label>
                         <input type="password" class="form-control" id="heslo" name="heslo">
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Odeslat</button>
+                    <button type="submit" class="btn btn-primary btn-block">Vytvořit účet!</button>
                 </form>
             </div>
         </div>
@@ -74,12 +137,12 @@
 
     <footer class="bg-light text-center text-lg-start mt-5">
         <div class="text-center p-3">
-            © 2024 Dobrovolníci
+            <span class="bold">© 2024 Dobrovolníci</span>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+    </body>
+    </html>
