@@ -2,16 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiky</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom, #e9ecef, #ffffff); /* Lineární gradient na pozadí celé stránky */
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            margin: 0; /* Reset marginu */
+            min-height: 100vh; /* Minimální výška na celou výšku viewportu */
+        }
+        .container {
+            max-width: 800px; /* Zvětšení kontejneru */
+            margin: 0 auto; /* Zarovnání na střed */
+            padding: 30px; /* Odsazení uvnitř kontejneru */
+            border-radius: 15px; /* Zakulacené rohy kontejneru */
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Stín pro kontejner */
+            background-color: #ffffff; /* Bílé pozadí kontejneru */
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #007bff; /* Modrá barva pro nadpis */
+        }
+        p {
+            font-size: 1.2rem; /* Zvětšení velikosti textu */
+            color: #343a40; /* Černá barva pro text */
+            margin-bottom: 20px; /* Mezera mezi jednotlivými statistikami */
+        }
+    </style>
 </head>
 <body>
 
-    <p>Senior: {{ statistika["senior_s"] }} {{jmeno1}}</p><br>
-    <p>Komunitzah: {{ statistika["komunitzah_s"] }} {{jmeno4}} </p><br>
-    <p>Vydej: {{ statistika["vydej_s"] }} {{jmeno5}}</p><br> 
-    <p>Promale: {{ statistika["promale_s"] }} {{jmeno3}}</p><br>
-    <p>Beskydy: {{ statistika["beskydy_s"] }} {{jmeno2}}</p><br>
-    
+<div class="container">
+    <h1>Statistiky</h1>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p><strong>Ukliďme Beskydy! :</strong> {{ statistika["beskydy_s"] }} {{jmeno2}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p><strong>Zábava s malými! :</strong> {{ statistika["promale_s"] }} {{jmeno3}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p><strong>Pomoc výdejem jídla! :</strong> {{ statistika["vydej_s"] }} {{jmeno5}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p><strong>Zachraň komunitní zahrádku! :</strong> {{ statistika["komunitzah_s"] }} {{jmeno4}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p><strong>Důchodci také potřebují žít! :</strong> {{ statistika["senior_s"] }} {{jmeno1}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

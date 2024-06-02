@@ -3,25 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Beskydy</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin-bottom: 70px; /* pro posunutí obsahu stránky dolů */
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-top: 10px; /* zde jsme zvýšili vzdálenost mezi horním okrajem stránky a obsahem */
+        }
+        .beskydy {
+            margin-top: 30px;
+        }
+        header {
+            background-color: #89c4fc;
+            color: white;
+            text-align: center;
+            padding:10px 0;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 32px 0; /* zde jsme zvětšili výšku šedého řádku */
+        }
+    </style>
 </head>
 <body>
-    <h1>Pomož Beskydám!</h1>
-<form method="post">
-    <p>- tým dobrovolníků, který bude procházet naplánovanou cestu Beskydami a přitom vybírat z přírody nečistoty</p>
-    <p>- nářadí a potřebné věci i s občerstvením jsou zajištěny. Doporučuje se vzít si batoh</p>
-    <p>- naplánovaná cesta má 15-20 kilometrů</p>
-    <p>- datum akce: 25.6.2024</p>
+    <header>
+        <div class="container">
+            <h1>Ukliďme Beskydy!</h1>
+            <p>...</p>
+        </div>
+    </header>
 
-</form>
-<form method="post" action="/beskydy_s">
-    <input type="submit" value="Chci se zapojit!">
-   </form>
-
-
-    <div class="beskydy">
-    <img src="https://g.denik.cz/71/ff/lyse-hore-pri-velkem-cisteni-beskyd-patri-extra-pozornost-01.jpg">
+    <div class="container mt-3"> <!-- zde jsme zvýšili vzdálenost mezi horním okrajem stránky a obsahem -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Informace o projektu</h5>
+                        <p class="card-text">Tým dobrovolníků bude procházet naplánovanou cestu Beskydami a přitom vybírat z přírody nečistoty. Nářadí a potřebné věci i s občerstvením jsou zajištěny. Doporučuje se vzít si batoh. Naplánovaná cesta má 15-20 kilometrů. Datum akce: 25.6.2024.</p>
+                        <form method="post" action="/beskydy_s">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Chci se zapojit!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="https://pozitivni-zpravy.cz/wp-content/uploads/2018/05/ciste-beskydy.jpg" class="img-fluid rounded">
+            </div>
+        </div>
     </div>
+
+    <footer>
+        © 2024 Ukliďme Beskydy!
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

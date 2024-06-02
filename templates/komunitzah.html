@@ -3,27 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Komunitní zahrádka</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin-bottom: 70px; /* pro posunutí obsahu stránky dolů */
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-top: 10px; /* zde jsme zvýšili vzdálenost mezi horním okrajem stránky a obsahem */
+        }
+        .beskydy {
+            margin-top: 30px;
+        }
+        header {
+            background-color: #89c4fc;
+            color: white;
+            text-align: center;
+            padding:10px 0;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 32px 0; /* zde jsme zvětšili výšku šedého řádku */
+        }
+    </style>
 </head>
 <body>
-    <h1>Pomož udržet komunitní zahrádku!</h1>
-    <form method="post">
-        <p>- dobrovolníci pomohou spravit a zotavit komunitní zahrádku</p>
-        <p>- doporučené pro milovníky zahradničení</p>
-        <p>- občerstvení pro dobrovolníky zajištěno</p>
-        <p>- místo : Frýdek místek a Kopřivnice (Komenského 1520/33, Kopřivnice, 742 21)</p>
-        <p>- datum akce: 3.7.2024</p>
+    <header>
+        <div class="container">
+            <h1>Zachraň komunitní zahrádku!</h1>
+            <p>...</p>
+            
+        </div>
+    </header>
 
-    
-    
-    </form>
-    <form method="post" action="/komunitzah_s">
-        <input type="submit" value="Chci se zapojit!">
-       </form>
+    <div class="container mt-3"> <!-- zde jsme zvýšili vzdálenost mezi horním okrajem stránky a obsahem -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Informace o projektu</h5>
+                        <p class="card-text">Dobrovolníci pomohou spravit a zotavit komunitní zahrádku. Doporučené pro milovníky zahradničení. Občerstvení pro dobrovolníky zajištěno. Místo : Frýdek místek a Kopřivnice (Komenského 1520/33, Kopřivnice, 742 21). Datum akce: 3.7.2024</p>
+                        <form method="post" action="/komunitzah_s">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Chci se zapojit!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="https://budejovice.rozhlas.cz/sites/default/files/styles/cro_16x9_tablet/public/6400e1a7949f180bcc4c10256db3c642.jpg?itok=wRtU2ITF" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
 
-    <div class="komunitzah">
-    <img src="https://budejovice.rozhlas.cz/sites/default/files/styles/cro_16x9_tablet/public/6400e1a7949f180bcc4c10256db3c642.jpg?itok=wRtU2ITF">
-</div>
+    <footer>
+        © 2024 Zachraň komunitní zahrádku!
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

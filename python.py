@@ -107,14 +107,14 @@ def prihlas_se():
                 mam_te = 0
                 
         if mam_te == 1:
-            porovnani = "Jsi přihlášen."
+            porovnani = "Jsi přihlášen. Výborně!"
             hl_jmeno = request.form.get("p_jmeno")
             hl_prijmeni = request.form.get("p_prijmeni")
             session['hl_jmeno'] = hl_jmeno #uložím do relace
             session['hl_prijmeni'] = hl_prijmeni #uložím do relace
             
         if mam_te != 1:
-            porovnani = "něco nám nesedí" 
+            porovnani = "Něco nám nesedí..vyplň formulář." 
             
     
     return render_template("prihlas_se.html",spravne=porovnani) 

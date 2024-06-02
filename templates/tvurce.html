@@ -3,18 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Informace o tvůrci stránky</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css.css">
 </head>
 <body>
-    <h2>Informace o tvůrci stránky</h2>
-    <form>
-        <p>Jméno: Martin Rusina</p>
-        <p>email: tvurcestranky1@seznam.cz</p>
-        <p>telefon: +420 858 921 123</p>
-        <p>Datum vytvoření stránky: 27.5.2024</p>
-        <br>é
-        <p>K čemu stránka slouží? : Stránka představuje organizaci komunity dobrovolníků. Lidé se mohou přihlásit, a vidět všechny ostatní členy. Jsou zde dobrovolnické projekty, do kterých se může každý člen zapojit</p>
-    </form>
+    <div class="container mt-5">
+        <h2 class="text-center">Informace o tvůrci stránky</h2>
+        <form>
+            <div class="form-group">
+                <label for="jmeno">Jméno:</label>
+                <input type="text" class="form-control" id="jmeno" value="Martin Rusina" disabled>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" value="tvurcestranky1@seznam.cz" disabled>
+            </div>
+            <div class="form-group">
+                <label for="telefon">Telefon:</label>
+                <input type="text" class="form-control" id="telefon" value="+420 858 921 123" disabled>
+            </div>
+            <div class="form-group">
+                <label for="vytvoreni">Datum vytvoření stránky:</label>
+                <input type="text" class="form-control" id="vytvoreni" value="27.5.2024" disabled>
+            </div>
+            <div class="form-group">
+                <label for="popis">K čemu stránka slouží?</label>
+                <textarea class="form-control" id="popis" rows="5" disabled>Stránka představuje organizaci komunity dobrovolníků. Lidé se mohou přihlásit a vidět všechny ostatní členy. Jsou zde dobrovolnické projekty, do kterých se může každý člen zapojit.</textarea>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

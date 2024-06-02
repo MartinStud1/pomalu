@@ -3,38 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="static/css.css">
+    <title>Naše Projekty</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .navbar {
+            background-color: #28a745; /* Zelená barva pro navigační panel */
+        }
+        .navbar-brand {
+            color: #ffffff !important;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+            background-color: #f8f9fa; /* Lehce zelené pozadí pro karty */
+            border: 2px solid #20c997; /* Tělné ohraničení kolem karet */
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card-title {
+            font-size: 1.5rem;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 25px;
+            padding: 10px 20px;
+        }
+        .section-title {
+            font-weight: bold;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+        .cards-container {
+            margin-top: 30px;
+        }
+        .card-spacing {
+            margin-top: 45px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Naše projekty :</h1>
-    <br>
-    <br>
-    <br>
-<form method="post" action="/beskydy">
-    <h2>Záchrana hor a životního prostředí v Beskydách!</h2>
-    <input type="submit" value="Více informací">
-</form>
-    <br>
-<form method="post" action="/promale">
-    <h2>Organizování zábavy pro nejmenší!</h2>
-    <input type="submit" value="Více informací">
-</form>
-    <br>
-<form method="post" action="/vydej">    
-    <h2>Pomoc výdeju potravin potřebným!</h2>
-    <input type="submit" value="Více informací">
-</form>
-    <br>
-<form method="post" action="/komunitzah">
-    <h2>Pomoc s komunitní zahrádkou!</h2>
-    <input type="submit" value="Více informací">
-</form>
-    <br>
-<form method="post" action="/senior">
-    <h2>Tvoření aktivit pro seniory!</h2>
-    <input type="submit" value="Více informací">
-</form>
-    <br>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">Naše Projekty</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>
+
+<div class="container">
+    <h1 class="text-center section-title">Naše projekty :</h1>
+    <br><br><br>
+    
+    <div class="row cards-container">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h2 class="card-title">Čistotou Beskydám!</h2>
+                    <form method="post" action="/beskydy">
+                        <input type="submit" class="btn btn-custom" value="Více informací">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h2 class="card-title">Zábava dětem!</h2>
+                    <form method="post" action="/promale">
+                        <input type="submit" class="btn btn-custom" value="Více informací">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h2 class="card-title">Výdej potravin!</h2>
+                    <form method="post" action="/vydej">
+                        <input type="submit" class="btn btn-custom" value="Více informací">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="w-100 card-spacing"></div> <!-- Prázdný řádek pro mezery -->
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h2 class="card-title">Oprava zahrádky!</h2>
+                    <form method="post" action="/komunitzah">
+                        <input type="submit" class="btn btn-custom" value="Více informací">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h2 class="card-title">Aktivity s důchodci!</h2>
+                    <form method="post" action="/senior">
+                        <input type="submit" class="btn btn-custom" value="Více informací">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

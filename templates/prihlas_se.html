@@ -3,27 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Přihlášení</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa; /* světle šedá */
+            margin: 0;
+            padding: 0;
+            font-size: 10px;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: #28a745; /* zelená */
+            font-weight: bold; /* ztužení písma */
+            font-size: 2.1rem; /* zvětšení písma */
+        }
+        .left-bar, .right-bar {
+            position: fixed;
+            background-color: #000; /* černá */
+            width: 42px; /* šířka zvětšena o 12px */
+            height: 100%;
+            z-index: 1000;
+        }
+        .left-bar {
+            left: 0;
+        }
+        .right-bar {
+            right: 0;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #28a745; /* světle zelená */
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 10px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745; /* zelená */
+            color: #fff; /* bílá */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px; /* text tlačítka zvětšen o 10px */
+        }
+        input[type="submit"]:hover {
+            background-color: #218838; /* tmavější zelená */
+        }
+        .spravne-content {
+            font-size: 24px; /* Velikost textu */
+            margin-top: 20px; /* Posunutí obsahu dolů pod formulář */
+            border: 2px solid #28a745; /* Ohraničení kolem obsahu */
+            padding: 20px; /* Vnitřní odsazení obsahu */
+        }
+    </style>
 </head>
 <body>
-    <form method="post" action="/prihlas_se">
-        <h3>Zadej přihlašovací jméno</h3>
-        <input type="text" name="p_jmeno">
-        <h3>Zadej přihlašovací příjmení</h3>
-        <input type="text" name="p_prijmeni">
-        <h3>Zadej přihlašovací email</h3>
-        <input type="email" name="p_email">
-        <h3>Zadej přihlašovací telefon</h3>
-        <input type="number" name="p_telefon">
-        <h3>Zadej přihlašovací heslo</h3>
-        <input type="password" name="p_heslo">
-        <br>
-        <input type="submit">
-        <br>
-        </form> 
-        {{spravne}}
-        
-        
-          
+    <div class="left-bar"></div>
+    <div class="right-bar"></div>
+    <h1 class="display-3">Přihlaš se!</h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form method="post" action="/prihlas_se">
+                    <div class="form-group">
+                        <h3>Zadej přihlašovací jméno</h3>
+                        <input type="text" name="p_jmeno" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Zadej přihlašovací příjmení</h3>
+                        <input type="text" name="p_prijmeni" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Zadej přihlašovací email</h3>
+                        <input type="email" name="p_email" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Zadej přihlašovací telefon</h3>
+                        <input type="tel" name="p_telefon" pattern="[0-9]{9,10}" required>
+                    </div>
+                    <div class="form-group">
+                        <h3>Zadej přihlašovací heslo</h3>
+                        <input type="password" name="p_heslo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Přihlásit se">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center"> <!-- Přidána třída text-center pro vycentrování obsahu -->
+                <div class="spravne-content">
+                    {{spravne}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS a Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

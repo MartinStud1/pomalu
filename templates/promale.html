@@ -3,26 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pro děti</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="static/css.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            margin-bottom: 70px; /* pro posunutí obsahu stránky dolů */
+        }
+        .container {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-top: 10px; /* zde jsme zvýšili vzdálenost mezi horním okrajem stránky a obsahem */
+        }
+        .beskydy {
+            margin-top: 30px;
+        }
+        header {
+            background-color: #89c4fc;
+            color: white;
+            text-align: center;
+            padding:10px 0;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 32px 0; /* zde jsme zvětšili výšku šedého řádku */
+        }
+    </style>
 </head>
 <body>
-    <h1>Pomož se zábavou pro nejmenší</h1>
-    <form method="post">
-        <p>- tým dobrovolníků bude připravovat a provádět zábavné aktivity pro malé děti</p>
-        <p>- dobrovolníci také vyzvednou ovoce pro malé</p>
-        <p>-spoulupráce s dětským domovem - Dětské centrum Domeček</p>
-        <p>- místo: Dětské centrum Domeček + přesun dobrovolníků a dětí do připraveného nejbližšího zeleného parku</p>
-        <p>- datum akce: 2.9.2024</p>
-    
-        
-    </form>
-    <form method="post" action="/promale_s">
-        <input type="submit" value="Chci se zapojit!">
-       </form>
-    <div class="promale">
-    <img src="https://maltezskapomoc.cz/wp-content/uploads/userdata/IMG_2896.png">
-    <img src="https://maltezskapomoc.cz/wp-content/uploads/2022/07/IMG_2338-1-scaled.jpg"></div>
+    <header>
+        <div class="container">
+            <h1>Zábava s malými!</h1>
+            <p>...</p>
+            
+        </div>
+    </header>
 
+    <div class="container mt-3"> <!-- zde jsme zvýšili vzdálenost mezi horním okrajem stránky a obsahem -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Informace o projektu</h5>
+                        <p class="card-text">Tým dobrovolníků bude připravovat a provádět zábavné aktivity pro malé děti. Dobrovolníci vyzvednou ovoce pro děti. Spolupráce s dětským domovem - Dětské centrum Domeček. Místo akce: Dětské centrum Domeček s přesunem dobrovolníků a dětí do připraveného nejbližšího zeleného parku. Datum akce: 2.9.2024.</p>
+                        <form method="post" action="/promale_s">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Chci se zapojit!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img src="https://maltezskapomoc.cz/wp-content/uploads/userdata/IMG_2896.png" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2024 Zábava s malými!
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
